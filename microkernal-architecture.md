@@ -8,7 +8,7 @@
 
 core systemမှာ အခြေခံ functionလေးတွေပါ၀င်တတ်ပြီး၊ အသေးစိတ် အနုစိတ်processingတွေမပါ၀င်ဘဲ ယေဘူယဆန်ဆန် business logicတွေနဲ့ တည်ဆောက်ထားတယ်။ ပြီးတော့မှ independent component အနေနဲ့ plugin moduleတွေကို core systemနဲ့ချိတ်ဆက်ပြီး သုံးတဲ့ architectureပုံစံမျိုးပါ။ OS တွေဟာများသောအားဖြင့် microkernal architecuture pattern နဲ့တည်ဆောက်ထားတဲ့အတွက် ဒီpatternကို ခုလို နာမည်ပေးထားတာဖြစ်ပါတယ်။ ဒီတော့ plugin module တွေဟာ တနည်းနည်းနဲ့ core system ကို ချိတ်ဆက် communicate လုပ်ပြီး အလုပ်လုပ်ကြပါတယ်။ patternအနေနဲ့တော့ ဘယ်နည်းကိုသုံးပြီးမှ ချိတ်ဆက်ရမယ် လို့တော့ သီးခြားသတ်မှတ်မထားပါဘူး။ XML နဲ့ပဲချိတ်ချိတ် JSONနဲ့ပဲ dataတွေစီးဆင်းရင်ပဲဖြစ်ဖြစ် ၊ messaging သုံးသုံး ၊ လွတ်လပ်စွာ သုံးပြီးချိတ်ဆက် အလုပ်လုပ် လို့ရပါတယ်။&#x20;
 
-<figure><img src=".gitbook/assets/image (6).png" alt=""><figcaption><p>Figure 3-1 Microkernal Architecture Pattern</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (5).png" alt=""><figcaption><p>Figure 3-1 Microkernal Architecture Pattern</p></figcaption></figure>
 
 ဥပမာတခုအနေနဲ့ Eclipse IDE မှာ ဆိုရင် funcy editor featureလေးတွေ သုံးချင်မယ်ဆိုပါစို့။ ကိုယ်ကြိုက်နှစ်သက်တဲ့ editor plug-inတခု ထည့်ပြီး သုံးလိုက်ရုံပါပဲ။ customizable ဖြစ်ပီး အသုံး၀င်ပါတယ်။&#x20;
 
