@@ -16,7 +16,7 @@ Event-Driven architecture pattern ကတော့ highly scalable applications �
 
 သူနဲ့ mediatorနဲ့ကွာခြားချက်က တခုထဲက အလယ်ကနေ ကြားခံဖြန့်ကျက်ပေးတာမဟုတ်ဘဲနဲ့ event message တွေကို processor တွေဆီ ဖြန့်ပေးတဲ့ပုံစံမျိုးသွားတယ်။  ရိုးရှင်းပြီး ကြားကနေ လမ်းပြောင်းပေးတဲ့သူ စီစဥ်ပေးတဲ့သူမလိုတဲ့အခါမျိုးတွေမှာ သူက သုံးလို့အဆင်ပြေဆုံးပဲ။ သူ့ structure မှာက broker နဲ့ processor ဆိုပြီး ၂ ခုပဲရှိတယ်။ broker က event flowဖြစ်ဖို့နဲ့  processor က mediator မှာလိုပဲ တကယ့် business logic process ကို လုပ်ဆောင်ပေးတဲ့သူ။ ပုံ ၃ ကိုကြည့်ပါ။ သူ့ရဲ့ topologyက လက်ဆင့်ကမ်းအပြေးပြိုင်ပွဲလိုမျိုး မြင်ယောင်ကြည့်ရင် ပိုပြီး နားလည်ရလွယ်မယ်ထင်တယ်။ အပြေးအားကစားသမားတယောက်က တခြားတယောက်ကို တုတ်တိုလေးကို လက်လှမ်းပေးရင်း ပြေးရင်းနဲ့ နောက်ဆုံးပန်းတိုင်ထိ ဆင့်ကမ်းပေးသွားသလိုမျိုးပဲ event တခုကို processerတခုက တခုဆီ လှမ်းပေးရင်း ထပ်ပြီး အဲဒီ eventနဲ့ ပတ်သက်ပြီး လုပ်စရာ processမရှိတော့တဲ့အထိ အဆုံးသတ်ထိ အလုပ်လုပ်သွားတဲ့ပုံစံမျိုးပေါ့။
 
-<figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption><p>Figure 2-2 Event-driven architecture broker topology</p></figcaption></figure>
+<figure><img src=".gitbook/assets/image (2) (1).png" alt=""><figcaption><p>Figure 2-2 Event-driven architecture broker topology</p></figcaption></figure>
 
 
 

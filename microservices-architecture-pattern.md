@@ -12,5 +12,29 @@ Microservices ကတော့ ခုလက်ရှိအသုံးမျာ�
 
 Service-oriented architecture (SOA) patternကနေပြီးတွေ့ရလေ့ရှိတဲ့ issuesတွေဟာလည်း microservice patternဆီကို ပြောင်းလဲဖို့ ဦးတည်စေတဲ့အကြောင်းအရာတခုဖြစ်ပါသေးတယ်။ SOA patternဟာ ITနယ်ပယ်မှာ အရမ်းကို အသုံး၀င်ပြီးတော့ business goal အလိုက် service levelတွေနဲ့ မတူထူးခြားတဲ့ စွမ်းဆောင်ရည်တွေရှိပါတယ်။ ဒါပေမဲ့ သူ့ကို အသုံးပြုတဲ့အခါမှာ တခါတခါ ရှုပ်ထွေးခက်ခဲပြီး manageလုပ်ရ မလွယ်ကူတာမျိုး၊ နားလည်ရမလွယ်ကူတာမျိုးကြောင့် တော်တော်များများ applicationတွေအတွက်က မလိုအပ်ဘဲ အလွန်အကျွံ cost များနေတတ်ပါတယ်။ microservice patternကတော့ SOA ရဲ့ ရှုပ်ထွေးတဲ့ အပိုင်းတွေ (ဥပမာ orchestrationလိုမျိုး centerကနေ စီမံပေးဖို့ လိုအပ်နေတာမျိုး၊ dependencyတွေလျော့ချပစ်တာမျိုး) ကိုဖယ်ဖျက်ပြီး ရှင်းလင်းတဲ့ access တွေ connectivityတွေနဲ့ အစားထိုးပြီး ပြောင်းလဲ ပေးနိုင်ပါတယ်။
 
+### Topologies
+
 ဒီလိုဆို microserviceကို ဘယ်လို implement လုပ်မလဲ အသုံးချမလဲ ဆိုတော့ သူ့မှာ နည်းလမ်းပေါင်းများစွာရှိနေပြန်ပါသေးတယ်။ အဲဒီထဲကမှ အသုံးများဆုံး ၃ ခုကတော့ API REST-based, Application REST-Based နဲ့ centralized messaging topologyပဲဖြစ်တယ်။
+
+#### API REST-based Topology
+
+API REST-based topology ဟာ individual service api တွေနဲ့ဖွဲ့စည်းထားတဲ့ websites တွေကိုဖန်တီးတဲ့အခါ အသုံး၀င်ပါတယ်။ သူ့မှာ သီးသန့်ဖြစ်တဲ့ ဘယ်component ဘယ်business logicကိုမှ မမီခိုတဲ့ functionsတွေနဲ့ဖွဲ့စည်းထားတဲ့ component တနည်းအားဖြင့် modulesတွေပါ၀င်ပါတယ်။ ဒီ components တွေဟာ ပုံမှန်အားဖြင့် တခုနဲ့တခု ဆက်သွယ်ချိတ်ဆက်တဲ့အခါမှာ REST-based interface ကိုသုံးနိုင်ပြီး deploymentကလည်း သီးခြားစီဖြစ်တဲ့ API layers တွေအနေနဲ့ မြင်တွေ့နိုင်ပါတယ်။ အဲလိုမျိုး single-purpose RESTful web services တွေနဲ့ဖွဲ့စည်းထားတဲ့ topology ကို Yahoo, Google တို့ Amazonတို့မှာ တွေ့ရတတ်ပါတယ်။
+
+<figure><img src=".gitbook/assets/image (3).png" alt=""><figcaption><p>Figure 4-2 API REST-based Topology</p></figcaption></figure>
+
+API REST-based နဲ့ application REST-based မှာ ဘာတွေကွာခြားသလဲဆိုရင် client requests တွေဟာ မြင်တွေ့နေကျ web-based တနည်းအားဖြင့် application screenဆီကနေ လာတာမဟုတ်ဘဲ ရိုးရှင်းတဲ့ API layerကနေတဆင့် လာတာဖြစ်ပါတယ်။
+
+#### Application REST-based Topology
+
+User-Interface layerဟာ သီးခြား web applicationတခုအနေနဲ့ deployလုပ်ထားပါတယ်။  သူကနေမှတဆင့် တခြားသော single-purpose service component တွေကို လှမ်းပြီး accessလုပ်တဲ့ ပုံစံမျိုးပါ။ ဒီနေရာမှာ service componentတခုစီ ဟာလည်း အထက်ကပြောထားသလိုပဲ သီးသန့် deploy လုပ်လို့ရတဲ့ testingလုပ်လို့ရတဲ့ API componentတခုစီဖြစ်ကြပါတယ်။ ဒီ topologyကိုတော့ small to medium sized applicationတွေအတွက် တတ်နိုင်သမျှ complexity လျော့ချစေဖို့အတွက် အသုံးပြုကြပါတယ်။&#x20;
+
+<figure><img src=".gitbook/assets/image (7).png" alt=""><figcaption><p>Figure 4-3 Application REST-based Topology</p></figcaption></figure>
+
+#### Centralized messaging topology
+
+နောက်ထပ် အသုံးပြုများလေ့ရှိတဲ့ microservice topologyကတော့ centralized message topologyပဲဖြစ်တယ်။ သူက application REST-based နဲ့ ဆင်တူပြီး ကွာခြားတာတခုက componentsတွေကို လှမ်းဆက်သွယ်တဲ့အခါ REST ကို အသုံးပြုမဲ့အစား Active MQ, HornetQတို့လို message brokerကို အသုံးပြုတာဖြစ်တယ်။ သူ့ကို ရုတ်တရက်ကြည့်ရင် SOA လိုမျိုး နဲ့ ဆင်တူတယ်လို့ အထင်မှားနိုင်ပါတယ်။ ဒီမှာ အသုံးပြုမယ့် message brokerဟာ ကြားထဲက orchestrationတွေ transformationတွေ routing လုပ်ပေးမဲ့ componentတွေမလိုပါဘူး။ သူက component တွေချိတ်ဆက်ဖို့ အတွက်သက်သက်ပဲ message brokerကို အသုံးပြုတာဖြစ်ပါတယ်။ &#x20;
+
+ဒီလို patternမျိုးကို application ကြီးတွေမှာ မြင်တွေရလေ့ရှိပါတယ်။  user interface နဲ့ componentsတွေကြားမှာ ပိုကောင်းမွန်တဲ့ transportation layerလိုအပ်တဲ့အခါ အသုံး၀င်ပါတယ်။ အထက်ကပြောထားခဲ့တဲ့ patternတွေထက် ပိုကောင်းတဲ့အားသာချက်ကတော့ queuing, asynchronous messaging, monitoring, error handling အပြင် load balancing နဲ့ scalability တွေမှာ အားသာပါတယ်။  Centralized Message Brokerတွေမှာတွေ့ရလေ့ရှိတဲ့ bottleneck issuesတွေကိုလည်း multiple brokerတွေအဖြစ် ခွဲပေးပြီး message တွေကို balancing လုပ်ခြင်းအားဖြင်လည်း ဖြေရှင်းပေးနိုင်ပါတယ်။ ဒါကြောင့်သူ့ကို SOA နဲ့ မှားမမြင်မိဖို့ အရေးကြီးပါတယ်။
+
+<figure><img src=".gitbook/assets/image (2).png" alt=""><figcaption><p>Figure 4-4 Centralized Message Topology</p></figcaption></figure>
 
